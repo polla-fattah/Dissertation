@@ -1,0 +1,15 @@
+p-Value First,Clustering1,Clustering2,Rand,Jaccard,FM,VI,AUC
+p-Value First,kmeans,cmeans,0.9300849,0.9300849,0.9300849,1,0.941807
+p-Value First,kmeans,pam,0.8838158,0.9069338,0.9069338,0.9069338,0.1654484
+p-Value First,kmeans,hierarchical,0.7042622,0.7042622,0.6827076,0.7042622,0.08502077
+p-Value First,cmeans,pam,0.9650261,0.9883387,0.9883387,0.9185103,0.1888774
+p-Value First,cmeans,hierarchical,0.5790582,0.5790582,0.5790582,0.6827076,0.08502077
+p-Value First,pam,hierarchical,0.5790582,0.5790582,0.5790582,0.6827076,0.5397727
+p-Value First,All Samples,Friedman,1.73E-07,1.92E-07,1.92E-07,5.90E-08,1.98E-10
+p-Value Consequent,kmeans,cmeans,0.5588174,0.5588174,0.5588174,0.6194068,0.6091607
+p-Value Consequent,kmeans,pam,0.529826,0.5394618,0.5394618,0.6402339,0.578892
+p-Value Consequent,kmeans,hierarchical,0.003189786,0.003504422,0.003504422,0.01824638,9.14E-05
+p-Value Consequent,cmeans,pam,0.9766812,0.98834,0.98834,0.9883438,0.2144122
+p-Value Consequent,cmeans,hierarchical,6.34E-05,6.34E-05,6.34E-05,0.000787911,8.05E-07
+p-Value Consequent,pam,hierarchical,4.94E-05,4.94E-05,4.94E-05,0.001191972,6.92E-06
+p-Value Consequent,All Samples,Friedman,2.16E-09,4.66E-09,4.66E-09,1.33E-08,5.76E-07

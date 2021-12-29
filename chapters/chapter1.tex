@@ -1,0 +1,118 @@
+
+\chapter{Introduction}
+
+\label{Chap:Introduction}
+
+\section{Introduction}
+
+
+This research can be considered as a study in the field of data mining as we propose a classifier for the overall behaviour of items in temporal data and a method to measure changes in items' behaviour over the length of the temporal data. Classification is one technique involved in the data mining. Its task is to predict the class of items in a data set using a certain model of a classifier. The model is constructed using already-labelled items of similar data sets. This step allows classification techniques to be considered as a supervised machine learning method. Data Mining is the process of finding patterns in a large scale of data which are interesting, new, useful and meaningful \cite{Zaki2014}. Data mining can be considered as an interdisciplinary field of study consisting of areas such as databases, statistics, machine learning and artificial intelligence \cite{Chakrabarti2006}.
+
+The initial goal of this research is to measure the behavioural changes for groups of subjects, especially for public goods games players over a period of time. The behaviour of players in public goods game is under study by economists  \cite{Fischbacher2012, Palfrey1997a}. Public goods game is a simple experiment in the form of a game. The game consists of multiple players imitating real life situations of public good by contributing to a project which represents the public good \cite{Dufwenberg2011}. This goal is accomplished by clustering all available time points separately without a time dimension by using a selected clustering method. Then, the change between these clusters is measured using external cluster validity indices \cite{Halkidi2002a} to compare between the first time point clusters of the data set and the clusters of the remaining time points. However, assigning the first time point as a reference to measure the change in the subjects' behaviour for the rest of the time points raised a concern about the limitations of the method, as the first time point may not be representative of the rest of the data.
+
+The aforementioned limitation leads us to consider the concept of ''Reference of behaviour'' for items in temporal data. The reference of behaviour can be defined as the assumed metric behaviour 'standard' for the items in the data set. This reference of behaviour can be the first time point, the previous time point for the current time point, and the general overall behaviour of the items in the temporal data (detailed explanation in chapter 4).
+
+The first two references of behaviour are generated straightforward from data sets. However, the last reference of behaviour does not directly exist in the data set, and it had to be created so that we tried to use the provided classes of players by the economists. However, the economists' classes are based on static data filled as a questioner by the players instead of the actual players' behaviour during the game. Therefore a novel method for temporal rule-based classification is introduced, to classify players according to the temporal data. This method is based on the experts' classification and knowledge, and produces clear rules which can be dealt with by experts in the field in contrast to the available methods in which the classifier model lies deep in decision trees or neural network layers. The proposed method consists of two stages. The first stage generates a pool of classifiers with the help of human experts and the second stage uses optimisation techniques to select the best classifier among them (detailed explanation in chapter 5).
+
+
+To use the introduced classifier, and then to measure the behaviour change of the items in a more generalised context, we tested them with a stock market data set. Stock market data has the same properties as a public goods game because both are temporal, and the recorded behaviour of the items exist at all time points. However, the stock market data is larger than players data regarding the number of time points and the number of items at each time point. Given that a heuristic method is used to optimise provided rules for classification. The used heuristic is Differential Evolution, which is developed by Storn et al. \cite{Storn1997} (detailed explanation in chapter 6).
+
+So the focus of this study is to classify and measure changes of individuals on a temporal data with a small number of measurements (temporal attributes). The players of the public goods game data sets have only a few attributes which are related to the players’ behaviour through time. Moreover, these players are not labelled according to their behaviour through game rounds (time points) so that the available temporal classification methods which require training sets cannot be used to classify players of public goods games. So, the data is interested in this work has these specifications:
+
+\begin{itemize}
+	\item  Temporal: the same characteristic is repeatedly measured through various times
+	\item Distinct time points: each measurement consists of a single value and not a continuous series of values. This means that there is a time gap between every two measurements.
+	\item The individuals are recognisable at every time point.
+	\item In each time point, a single or a limited number of characteristics are measured so that the number of temporal attributes is limited.
+	\item The individuals have no labels for their class types.
+\end{itemize}
+
+
+As mentioned before, this work focuses on the public goods games and stock market data sets. However, similar data sets can be found in many disciplines because it is easy to record and store a few characteristics of items in a constant interval. Examples in medicine are like heart beat rate and temperature of patients every half an hour or so. In this situation, the proposed classification method can be used to determine the patients’ likelihood of recovery using the available readings of the data and experts' knowledge about normal body functions. This classification method can also be used to advise a suitable discipline for the pupil according to their grades. Pupils’ grades are recorded for various subjects throughout the study years in primary and secondary schools. So that the individual's tendency might be determined for the future study and career according to their achievements in different subjects.
+
+\section{Research Questions and Hypotheses}
+
+The main question which this study attempts to answer is: ''Is it possible to quantify the behavioural change of items in temporal data? Also, what is the best reference point to compare the behaviour change with?'' This question led us to introduce methods for quantifying changes and identifying the general behaviour of items using rule-based temporal classification. A series of smaller questions also arose concerning the details of the proposed methods and the case studies. The questions are:
+
+
+\begin{itemize}
+	
+	\item How to identify patterns of behaviour at a single time point? To find patterns of behaviour at each time point, we propose that the measurements of behaviour (attributes) in that particular time point should be clustered separately without the effect of time on the clustering. For example, if we need to examine stock price behaviour at a single time point,  it can be clustered into two clusters, decreasing and rising. As we have different clustering algorithms,  we can hypothesise that:
+	\begin{hyp} \label{hypo:diffCluster}
+		Using different clustering algorithms will not produce a significant difference in the final result of quantifying the changes over time as long as same clustering algorithm is used at both time points.
+	\end{hyp}
+	
+	\item How to measure the difference between the produced clusters of these time points? To quantify the difference between clusters at any two time points in a temporal data, we propose using existing methods in cluster validity indices and classification performance measures such as AUC, as these methods already measure the magnitude of the difference between true classes and clustering/classification guesses of subjects. According to this proposition, we can hypothesise that: 
+	\begin{hyp} \label{hypo:diffCVI}
+		The results of different external clustering indices and AUC for the same data set and using the same clustering algorithm to determine the patterns of items' behaviour are consistent. 
+	\end{hyp}
+	
+	\item What should be the reference point of behaviour to measure the changes between time points of the temporal data? To find a reference for items' behaviour, we propose using temporal classification or clustering to determine the overall behaviour of a subject and then comparing the difference of each time point to the general behaviour of the item. We can hypothesise that:
+	\begin{hyp} \label{hypo:overallBehavoiur} 
+		Using overall behaviour of a subject in a temporal data produces more stable results than comparing each time point with the first time point.
+	\end{hyp}
+	
+	\item How to classify public goods game players according to their contribution behaviour? To classify this temporal data and relate their classes to the rules created by economists, we propose a temporal rule-based classification method which optimises rules provided by experts. We can hypothesise that: 
+	\begin{hyp} \label{hypo:proposedClassification} 
+		The proposed classification method presents better classes that can represent players' behaviour than applying fixed rules to determine players' classes.
+	\end{hyp}
+	
+	\item Does the length of the public goods game affect player strategy? To determine the effect of the duration of the game on player strategy, we propose to classify players according to their behaviour using data sets of two different lengths of the game, and then check the number of players in each class. If the number of players is significantly different, then the game length may influence player strategy. Otherwise, it does not:
+	\begin{hyp} \label{hypo:lengthOftheGame} 
+		The length of the public goods game does not affect overall player strategy. 
+	\end{hyp}
+	
+	\item Can the proposed temporal classification method for players of a public goods game be generalised and used in different areas? To test the proposed classification method in areas other than a public goods game, we classify the stock market data according to their stability and then check whether they stay in the same class or not. To be able to predict their future values, the majority of stock markets should follow the same stability class in at least two consecutive time periods: 
+	\begin{hyp} \label{hypo:pridictabilityOfStocks} 
+		The majority of the stocks should follow the same stability class for two consecutive fiscal quarters so that their future behaviour can be predictable. 
+	\end{hyp}
+
+\end{itemize}
+
+
+
+\section{Research Contribution}
+
+This research presents two types of contribution for the knowledge. The first type is directly related to data mining and data analysis. The contributions of this type are:
+
+
+\begin{itemize}
+	
+	\item Using external cluster validity indices in a new way for measuring the amount of change which happens to items in the clusters between two time points in a temporal data.
+	
+	\item Presenting a novel way for classifying items in temporal data by combining rule-based algorithms and optimisation. The rules are provided by experts for the non-temporal attributes of data which may have been aggregated from the temporal attributes. Then, using optimisation to find the best classifier based on the agglomeration of the classes measured by the temporal attributes of the data from the provided pool of classifiers.
+	
+	\item Using the available internal cluster validity indices and other compactness measures like Euclidean to determine the best classifier. This approach makes it possible to use clustering tools in training and optimising the classification methods. 
+	
+	\item Using different reference of behaviours to compare with the items behaviour in each time point instead of only using the previous time point to compare with. This method provides end uses with a better tool to see the changes in different angles and view points.
+\end{itemize}
+
+
+The second type of contribution is related to the application areas of the first type, namely a public goods game and stock market prices. The contributions of this type are: 
+
+\begin{itemize}
+	\item Creating a new method for classifying public goods game players based on economists' methods of classifying them. However, the new classification uses players' actual contribution behaviour to classify them instead of relying on a static questionnaire completed by them before starting the game.
+	
+	\item Present additional evidence that the players' change in behaviour over time is smooth and subtle using external cluster validity indices to measure the differences in players' membership in clusters over two time points.
+	
+	\item By classifying the stability of shares and comparing these classes over two fiscal quarters, we will have contributed to the debate about the predictability of the stock market and presented yet additional evidence for the random walk theory.
+	
+
+	
+\end{itemize}
+
+\section{Thesis Structure}
+
+A detailed literature review is presented in Chapter \ref{Chap:Background} which covers various methods and techniques which have been developed to detect and measure changes in data streams and spatiotemporal data, as we describe their uses and limitations. A review of classification and clustering methods are presented highlighting the methods which are used in this research. This is followed by a comprehensive review of the most relevant available methods for temporal classification and clustering algorithms. In this piece of research, many performance measures have been used such as cluster validity indices for clustering and 'Area under the Curve of ROC' analysis for classification.  A detailed description of these methods is, therefore, presented. In this research, the data of public goods games and economists' classification methods are used for comparison purposes with our results. Accordingly,  a brief review of these classifications is presented. As one of the tests, we are using stock market data to measure its stability, so a short review of economists' findings on stock market stability is presented.
+
+
+Chapter \ref{Chap:Methodology} starts to fully formalise the issue by providing detailed requirements and concerns about measuring changes over time for items in temporal data. The method used for measuring and quantifying changes in items in temporal data between two time points are explained as well as the rationales behind the decisions made. Then, a step-by-step explanation of the proposed temporal rule-based classification method is offered with a list of compactness measures used for optimising the provided rules. In this piece of research, three data sets are used, all of which are listed in this chapter. The first data set is the synthetic data which are used to measure the change between time points. A detailed explanation is provided on how it is created and the property of its attributes. The second data comes with two variations in two different data sets with 10 and 27 rounds of the game completed by players. A detailed description of its attributes, how the experimental game is constructed and the data gathered, is presented. The last data set of stock market prices for the method of gathering, cleaning and reprocessing data is explained.
+
+Chapter \ref{Chap:Measuring} tests measuring changes between two time points by clustering data using different clustering algorithms, and tests various methods for aligning clusters in the two time points for the AUC of ROC and a one to one comparison. Also, a number of external cluster validities are used to quantify changes of measure for items in the data set. The data used for this test is the synthetic data, and two data sets from a public goods game.
+
+In Chapter \ref{Chap:Optimizing} the detailed algorithm for the temporal rule-based classification is presented. Then, the two data sets from the public goods game are used to classify them using the proposed classification. A comparison between the results of the classification and provided classes using experts' methods for classification is presented, as well as a comparison between classes of two different data sets. In this chapter, a simple version of the classifier is used. This is relatively slow as it uses brute force to find the best classifier.
+
+In Chapter \ref{Chap:Framework} a new version of the proposed classifier is presented using Differential Evolution to find the optimum classification rules from the pool of provided rules for classification. This new version is significantly faster than the version of Chapter \ref{Chap:Optimizing} which uses brute force for optimisation. Proper tests are presented using data sets from public goods games to ensure that the results of the heuristic method are not significantly different from the results of the brute force optimisation. Then, the new version of the classifier is used to address the questions regarding stock market data set and the hypotheses.
+
+The last chapter presents a conclusion for the use of the presented methods, and their possible limitations are discussed along with the areas that could be enhanced in the future. This chapter also reiterates the research questions, their related hypotheses as well as providing answers to them as they arise through this study.
+

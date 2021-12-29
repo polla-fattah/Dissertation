@@ -1,0 +1,109 @@
+ \documentclass[12pt, a4paper, twoside]{book}
+\usepackage[inner=5cm,outer=2.5cm,bottom=3.5cm, top=2.5cm]{geometry}
+\setcounter{secnumdepth}{1}
+
+\renewcommand*\rmdefault{ppl} % sets the font
+\usepackage{parskip} % paragraph spacing
+
+
+\usepackage{graphicx}
+\usepackage[hidelinks]{hyperref}
+
+\usepackage[tight,footnotesize]{subfigure}
+\usepackage[table,xcdraw]{xcolor}
+\usepackage{soul}
+\usepackage{amssym b,amsmath}
+\usepackage{floatrow}
+\usepackage[toc,page]{appendix}
+\usepackage{hhline}
+
+\usepackage{ntheorem}  % for hypothesis environment 
+\newtheorem{hyp}{Hypothesis}
+
+\usepackage{booktabs} % for table format
+\newcommand{\ra}[1]{\renewcommand{\arraystretch}{#1}}
+\usepackage{multirow} 
+\usepackage{rotating} % To write in diffrent directions in the table cell
+
+\usepackage{fancyhdr} % for page layout
+
+
+\usepackage[acronym,xindy]{glossaries}
+\makeglossaries
+
+
+% lscape.sty Produce landscape pages in a (mainly) portrait document.
+\usepackage{lscape}
+
+\usepackage[ruled,vlined,linesnumbered,resetcount,algochapter, ruled, boxed]{algorithm2e}
+%\usepackage[vlined, ruled, boxed]{algorithm2e}
+\SetKwProg{Fn}{Function}{}{}
+%% My Commands
+
+
+%For Codes 
+\usepackage{listings}
+
+% end For Code
+
+
+%% This command changes the line spacing to 1.5 lines, the minimum acceptable
+%% spacing that the Faculty of Engineering will accept.
+\renewcommand{\baselinestretch}{1.5}
+
+%\includeonly{chapters/chapter6}
+
+
+\begin{document}
+\renewcommand{\thepage}{\roman{page}}
+%% The following 2 commands set the level of section numbering. Set to
+%% "2", your sections will be labelled chapter.section.subsection,
+%% e.g. "2.3.14"
+\setcounter{secnumdepth}{2}
+\setcounter{tocdepth}{2}
+
+\include{chapters/preambles}
+
+
+%\pagestyle{headings}
+\pagenumbering{arabic}
+
+
+\fancypagestyle{newstyle}{
+	\fancyhf{} % clear all header and footer fields
+	
+	\fancyhead[LO]{\leftmark}
+	\fancyhead[RE]{\rightmark}
+	
+	\fancyfoot[C]{\thepage} % except the center
+
+	\renewcommand{\headrulewidth}{0pt}
+	\renewcommand{\footrulewidth}{0pt}
+	
+}
+\pagestyle{newstyle}
+
+
+
+
+ 
+
+\include{chapters/chapter1}
+
+\include{chapters/chapter2}
+
+\include{chapters/chapter3}
+
+\include{chapters/chapter4}
+
+\include{chapters/chapter5}
+
+\include{chapters/chapter6}
+
+\include{chapters/chapter7}
+
+\include{chapters/trailer}
+
+
+
+\end{document}

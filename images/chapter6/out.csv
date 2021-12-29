@@ -1,0 +1,7 @@
+,Lables,,Classes,
+Classification,Plain,Trans,Plain,Trans
+SVM,0.602,0.504,0.877,0.797
+Ctree,0.704,0.583,0.841,0.848
+C50,0.735,0.654,0.858,0.892
+Proposed ,IQR,Complet Dist,SD,
+,0.959,0.965,0.972,

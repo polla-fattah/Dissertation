@@ -1,0 +1,11 @@
+package,version,authors,Usage
+clv,0.3.2.1,Nieweglowski \cite{Nieweglowski2013},For validating clusters. Specially internal and external validity indeces methods
+DEoptim,2.2.3,Ardia et al \cite{Ardia2015},For diffrential evolution optimisation
+dplyr,0.4.3,Wickham et al \cite{Wickham2015},For Data manimpulation
+dtw,1.18.1,Giorgino \cite{Giorgino2009},For dynamic time wrapping algorithm
+gplots,3.0.1,Warnes et al \cite{Warnes2016},To create Heat maps
+Hmisc,3.17.4,Harrell JR \cite{Jr2016},
+mcclust,1.0,Fritsch \cite{Fritsch2012},For multiple clustering algorithmes
+mlbench,2.1.1,Leisch \cite{mlbench210},To generate data for tests
+pROC,1.8,Robin et al \cite{Robin2011},For classification evaluation specially AUC or ROC
+stargazer,5.2,Hlavac \cite{Hlavac2015},To create latex tables directly from R results

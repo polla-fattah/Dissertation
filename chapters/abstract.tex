@@ -1,0 +1,22 @@
+%% Set the space above the title appropriately, for the amount of text
+%% that you have in your abstract
+%\vspace*{5cm}
+\begin{center}
+
+\textbf{Abstract}
+\end{center}
+
+\normalsize
+
+
+Classifying items using temporal data, i.e. several readings of the same attribute in different time points, has many applications in the real world. The pivotal question which motivates this study is: ''Is it possible to quantify behavioural change in temporal data? And what is the best reference point to compare the behaviour change with?". The focus of this study will be in applications in economics such as playing many rounds of public goods games and share price moves in the stock market.
+
+There are many methods for classifying temporal data and many methods for measuring the change of items' behaviour in temporal data. However, the available methods for classifying temporal data produce complicated rules, and their models are buried in deep decision trees or complex neural networks that are hard for human experts to read and understand. Moreover, methods of measuring cluster changes do not focus on the individual item's behaviour rather; they concentrate on the clusters and their changes over time.
+
+This research presents methods for classifying temporal data items and measuring their behavioural changes between time points. As case of studies, public goods game and stock market price data are used to test novel methods of classification and behaviour change measure.
+
+To represent the magnitude of the behaviour change, we use cluster validity measures in a novel way by measuring the difference between item labels produced by the same clustering algorithm at each time point and a behaviour reference point. Such a reference point might be the first time point, the previous time point or a point representing the general overall behaviour of the items in the temporal data. This method uses external cluster validity indices to measure the difference between labels provided by the same clustering method in different time points rather than using different clustering methods for the same data set as it is the case for relative clustering indices.
+
+To create a general behavioural reference point in temporal data, we present a novel temporal rule-based classification method that consists of two stages. In the first stage, initial rules are generated based on experts' definition for the classes in the form of aggregated attributes of the temporal readings. These initial rules are not crisp and may overlap in their representation for the classes. This provides flexibility for the rules so that they can create a pool of classifiers that can be selected from. Then this pool of classifiers will be optimised in the second stage so that an optimised classifier will be selected among them. The optimised classifier is a set of discrete classification rules, which generates the most compact classes over all time points. Class compactness is measured by using statistical dispersion measures or Euclidean distance within class items.
+
+The classification results of the public goods game show that the proposed method for classification can produce better results for representing players than the available methods by economists and general temporal classification methods. Moreover, measuring players' behaviour supports economists' view of the players' behaviour change during game rounds. For the stock market data, we present a viable method for classifying stocks according to their stability which might help to provide insights for stock market predictability.

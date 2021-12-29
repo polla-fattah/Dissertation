@@ -1,0 +1,8 @@
+Clustering1,Clustering2,p-Value First,p-Value Consequent
+kmeans,cmeans,0.9232418,0.7602488
+kmeans,pam,0.862259,0.4645937
+kmeans,hierarchical,0.8221081,0.2435835
+cmeans,pam,0.9615768,0.624153
+cmeans,hierarchical,0.9168674,0.1469612
+pam,hierarchical,0.9935938,0.06095961
+All Samples,Friedman,0.7819042,0.1059157

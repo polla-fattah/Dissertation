@@ -1,0 +1,93 @@
+%% Sets up the title page.
+\addcontentsline{toc}{chapter}{Title}
+\addtocontents{toc}{\protect\vspace{-9pt}}
+\pagestyle{empty}
+\thispagestyle{empty}
+%% Includes the file "title.tex"
+\input{chapters/title}
+
+%% Sets up the Abstract page
+\newpage
+\addcontentsline{toc}{chapter}{Dedication}
+\addtocontents{toc}{\protect\vspace{-9pt}}
+\begin{center}
+	\vspace*{250px}
+	\large
+	\textbf{Dedicated to the Moonshine of My Life.}
+\end{center}
+
+
+
+
+%% Sets up the Abstract page
+\newpage
+\addcontentsline{toc}{chapter}{Abstract}
+\addtocontents{toc}{\protect\vspace{-9pt}}
+\pagestyle{plain}
+\thispagestyle{plain}
+%% Includes "abstract.tex"
+\input{chapters/abstract}
+
+
+%% Produces the table of contents
+\newpage
+\addcontentsline{toc}{chapter}{Contents}   % Contents
+\addtocontents{toc}{\protect\vspace{-9pt}}
+\pagestyle{plain}
+\thispagestyle{plain}
+\tableofcontents
+
+%% If you want to add a list of figures after your table of contents,
+%% include the following 4 lines. If not, comment them out.
+\newpage
+\addcontentsline{toc}{chapter}{List of Figures}   % List of Figures
+\addtocontents{toc}{\protect\vspace{-9pt}}
+\listoffigures
+
+%% If you want to add a list of figures after your table of contents,
+%% include the following 4 lines. If not, comment them out.
+\newpage
+\addcontentsline{toc}{chapter}{List of Tables}   % List of Tables
+\addtocontents{toc}{\protect\vspace{-9pt}}
+\listoftables
+
+%% Sets up the Acknowledgements page
+%% Includes "acknow.tex"
+\newpage
+\addcontentsline{toc}{chapter}{Acknowledgements}
+\addtocontents{toc}{\protect\vspace{-9pt}}
+\pagestyle{plain}
+\thispagestyle{plain}
+\input{chapters/acknowledge}
+
+%% Sets up the Acknowledgements page
+%% Includes "acknow.tex"
+\newpage
+\addcontentsline{toc}{chapter}{Dissemination}
+\addtocontents{toc}{\protect\vspace{-9pt}}
+\pagestyle{plain}
+\thispagestyle{plain}
+\input{chapters/dissemination}
+
+
+% Acronym
+\newpage
+\addcontentsline{toc}{chapter}{Acronym}
+\addtocontents{toc}{\protect\vspace{-9pt}}
+\pagestyle{plain}
+\thispagestyle{plain}
+\input{chapters/acronym}
+	\printglossary[type=\acronymtype]
+
+
+% Glossary
+\newpage
+\addcontentsline{toc}{chapter}{Glossary}
+\addtocontents{toc}{\protect\vspace{-9pt}}
+\pagestyle{plain}
+\thispagestyle{plain}
+\input{chapters/glossary}
+	\printglossary
+
+\newpage
+\centerline{Blank Page}
